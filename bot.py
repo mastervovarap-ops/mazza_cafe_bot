@@ -77,7 +77,7 @@ async def show_cart(callback: types.CallbackQuery, state: FSMContext):
     if not items:
         await callback.message.edit_text("🛒 Ваш кошик порожній.", reply_markup=main_menu())
         return
-    text = "🛒 Ваше замовлення:
+    text = "🛒 Ваше замовлення:"
 " + "\n".join([f"- {i}" for i in items])
     text += "\n\nВведіть своє ім’я:"
     await state.set_state(OrderState.waiting_for_name)
